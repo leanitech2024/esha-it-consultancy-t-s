@@ -1,95 +1,29 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import type { Post } from 'content-collections'
+import { allPosts } from 'content-collections'
+
 // import { useState } from 'react'
 
 // import blogData from '#/components/data/blog-data'
 import NotFound from '#/components/not-found'
 import BreadCrumb from '#/components/pages/common/breadcrumb'
 import SectionHeadings from '#/components/SectionHeadings'
+import { formattedDate } from '#/lib/utils.ts'
 
-import avatar1 from '/assets/img/avatar/avatar-1.jpg'
-import avatar2 from '/assets/img/avatar/avatar-2.jpg'
-import avatar3 from '/assets/img/avatar/avatar-3.jpg'
-import avatar4 from '/assets/img/avatar/avatar-4.jpg'
-import avatar5 from '/assets/img/avatar/avatar-5.jpg'
+// import avatar1 from '/assets/img/avatar/avatar-1.jpg'
+// import avatar2 from '/assets/img/avatar/avatar-2.jpg'
+// import avatar3 from '/assets/img/avatar/avatar-3.jpg'
+// import avatar4 from '/assets/img/avatar/avatar-4.jpg'
+// import avatar5 from '/assets/img/avatar/avatar-5.jpg'
 // import avatar6 from '/assets/img/avatar/avatar-6.jpg'
 // import avatar7 from '/assets/img/avatar/avatar-7.jpg'
-import image1 from '/assets/img/blog/blog-1.jpg'
-import image2 from '/assets/img/blog/blog-2.jpg'
-import image3 from '/assets/img/blog/blog-3.jpg'
-import image4 from '/assets/img/blog/blog-4.jpg'
-import image5 from '/assets/img/blog/blog-5.jpg'
+// import image1 from '/assets/img/blog/blog-1.jpg'
+// import image2 from '/assets/img/blog/blog-2.jpg'
+// import image3 from '/assets/img/blog/blog-3.jpg'
+// import image4 from '/assets/img/blog/blog-4.jpg'
+// import image5 from '/assets/img/blog/blog-5.jpg'
 // import image6 from '/assets/img/blog/blog-6.jpg'
 // import image7 from '/assets/img/blog/blog-7.jpg'
-
-export function getToday() {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-  }).format(new Date())
-}
-
-export function lowercaseAndHyphenate(str: string) {
-  return str.toLowerCase().replace(/\s+/g, '-')
-}
-
-const blogs = [
-  {
-    id: crypto.randomUUID(),
-    title: 'The Future of AI in Business Transformation',
-    description:
-      'Artificial Intelligence is no longer an emerging concept—it is a competitive necessity. Discover how AI-driven automation, predictive analytics, and intelligent systems are reshaping industries and enabling smarter decision-making.',
-    category: ['Artificial Intelligence'],
-    date: getToday(),
-    image: image1,
-    avatar: avatar1,
-    comment: '',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Building Scalable Cloud Infrastructure for Modern Enterprises',
-    description:
-      'Scalability, security, and performance define modern digital ecosystems. Learn how cloud-native architecture empowers businesses to operate with agility and resilience in a global environment.',
-    category: ['Cloud Solutions'],
-    date: getToday(),
-    image: image2,
-    avatar: avatar2,
-    comment: '',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Cybersecurity in the Digital Age: Protecting What Matters',
-    description:
-      'With increasing digital dependency comes heightened risk. Understand the latest cybersecurity frameworks, risk mitigation strategies, and proactive defense systems essential for safeguarding business assets.',
-    category: ['Security'],
-    date: getToday(),
-    image: image3,
-    avatar: avatar3,
-    comment: '',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Digital Marketing That Drives Measurable Growth',
-    description:
-      'Beyond visibility lies performance. Explore how data-driven digital marketing strategies—from SEO to paid media—create meaningful engagement and measurable ROI.',
-    category: ['Digital Marketing'],
-    date: getToday(),
-    image: image4,
-    avatar: avatar4,
-    comment: '',
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'UI/UX Design: Crafting Experiences That Convert',
-    description:
-      'User experience is the defining factor of digital success. Learn how intuitive design, user psychology, and seamless interfaces create impactful customer journeys.',
-    category: ['Design'],
-    date: getToday(),
-    image: image5,
-    avatar: avatar5,
-    comment: '',
-  },
-]
 
 export const Route = createFileRoute('/blogs/')({
   head: () => ({
@@ -104,6 +38,14 @@ export const Route = createFileRoute('/blogs/')({
       },
     ],
   }),
+  beforeLoad: () => {
+    const posts = allPosts
+    const sortedPosts = posts.sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+    )
+    return { blogs: sortedPosts }
+  },
   component: RouteComponent,
   notFoundComponent: NotFound,
 })
@@ -118,6 +60,7 @@ function RouteComponent() {
 }
 
 const BlogGridMain = () => {
+  const { blogs } = Route.useRouteContext()
   // const blogItemShow = 6
   // const [currentPage, setCurrentPage] = useState(0)
   // const totalPages = Math.ceil(blogData.length / blogItemShow)
@@ -147,7 +90,7 @@ const BlogGridMain = () => {
 
           <div className="row gy-4 mt-5">
             {blogs.map((data) => (
-              <BlogItem key={data.id} blog={data} />
+              <BlogItem key={data._meta.filePath} blog={data} />
             ))}
             {/* <BlogItem currentBlogItems={currentBlogItems} /> */}
           </div>
@@ -172,55 +115,51 @@ const BlogGridMain = () => {
   )
 }
 
-// type BlogItemProps = {
-//   currentBlogItems: typeof blogData
-// }
-
-const BlogItem = ({ blog }: { blog: (typeof blogs)[number] }) => {
+const BlogItem = ({ blog }: { blog: Post }) => {
   return (
     <div className="col-xl-4 col-lg-6">
       <div className="blog__two-single-blog">
         <div className="blog__two-single-blog-img">
           <div className="blog__two-single-blog-date">
-            <span className="date">{blog.date}</span>
+            <span className="date">{formattedDate(blog.createdAt)}</span>
             {/* <span className="month">Mar</span> */}
           </div>
-          {/* <Link
+          <Link
             to={`/blogs/$blogId`}
-            params={{ blogId: lowercaseAndHyphenate(blog.title) }}
+            params={{ blogId: blog.slug }}
             className="blog__two-single-blog-img-link"
           >
-            <img src={blog.image} alt="blog" />
-          </Link> */}
-          <img src={blog.image} alt="blog" />
+            <img
+              src={blog.image}
+              alt={blog.title}
+              style={{ aspectRatio: 16 / 9 }}
+            />
+          </Link>
         </div>
         <div className="blog__two-single-blog-content">
           <div className="blog__two-single-blog-content-top">
             <span>
-              <i className="far fa-user"></i>by Admin
+              <i className="far fa-user"></i>by {blog.author}
             </span>
-            <span>
+            {/* <span>
               <i className="far fa-comment-dots"></i>Comments ({blog.comment})
-            </span>
+            </span> */}
           </div>
-          {/* <Link
+          <Link
             to={`/blogs/$blogId`}
-            params={{ blogId: lowercaseAndHyphenate(blog.title) }}
-            // href={`/blog/${data.id}`}
+            params={{ blogId: blog.slug }}
             className="blog__two-single-blog-content-title"
           >
             {blog.title}
-          </Link> */}
-          <h3 className={'fs-5 mb-2'}>{blog.title}</h3>
-          <p className={'ls-3'}>{blog.description}</p>
-          {/* <Link
-            className="btn-three"
+          </Link>
+          <p className={'ls-3'}>{blog.summary}</p>
+          <Link
+            className="btn-three mt-3"
             to={`/blogs/$blogId`}
-            params={{ blogId: lowercaseAndHyphenate(blog.title) }}
-            // href={`/blog/${data.id}`}
+            params={{ blogId: blog.slug }}
           >
             Read More<i className="fas fa-chevron-right"></i>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

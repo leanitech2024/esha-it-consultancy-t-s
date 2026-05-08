@@ -9,10 +9,12 @@ import brand3 from '/assets/img/brand/brand-3.png'
 import brand4 from '/assets/img/brand/brand-4.png'
 import brand5 from '/assets/img/brand/brand-5.png'
 
+import teamData from '#/components/data/team-data.tsx'
 import NotFound from '#/components/not-found'
 import BreadCrumb from '#/components/pages/common/breadcrumb'
 import Testimonial from '#/components/pages/homes/home/testimonial'
-import WorkArea from '#/components/pages/homes/home/work'
+import SectionHeadings from '#/components/SectionHeadings.tsx'
+// import WorkArea from '#/components/pages/homes/home/work'
 
 export const Route = createFileRoute('/about')({
   head: () => ({
@@ -34,18 +36,8 @@ export const Route = createFileRoute('/about')({
 function About() {
   return (
     <main className="">
-      {/* <HeaderOne /> */}
       <BreadCrumb title="About Us" innerTitle="Company About" />
-      <AboutMain />
-      {/* <FooterOne /> */}
-      {/* <ScrollToTop /> */}
-    </main>
-  )
-}
 
-const AboutMain = () => {
-  return (
-    <>
       <div className="about__one section-padding">
         <div className="container">
           <div className="row align-items-center flex-wrap-reverse gy-4">
@@ -121,45 +113,58 @@ const AboutMain = () => {
           </div>
         </div>
       </div>
-      <div className="brand__area section-padding pt-0">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="text__slider">
-                <div className="text-slide">
-                  <div className="sliders scroll">
-                    <div className="brand__area-item">
-                      <img src={brand1} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand2} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand3} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand4} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand5} alt="image" />
-                    </div>
+
+      <ServicesMain />
+
+      <TeamMain />
+
+      <Testimonial />
+
+      <CompanyLogos />
+    </main>
+  )
+}
+
+function CompanyLogos() {
+  return (
+    <div className="brand__area section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="text__slider">
+              <div className="text-slide">
+                <div className="sliders scroll">
+                  <div className="brand__area-item">
+                    <img src={brand1} alt="image" />
                   </div>
-                  <div className="sliders scroll">
-                    <div className="brand__area-item">
-                      <img src={brand1} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand2} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand3} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand4} alt="image" />
-                    </div>
-                    <div className="brand__area-item">
-                      <img src={brand5} alt="image" />
-                    </div>
+                  <div className="brand__area-item">
+                    <img src={brand2} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand3} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand4} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand5} alt="image" />
+                  </div>
+                </div>
+                <div className="sliders scroll">
+                  <div className="brand__area-item">
+                    <img src={brand1} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand2} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand3} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand4} alt="image" />
+                  </div>
+                  <div className="brand__area-item">
+                    <img src={brand5} alt="image" />
                   </div>
                 </div>
               </div>
@@ -167,8 +172,144 @@ const AboutMain = () => {
           </div>
         </div>
       </div>
-      <WorkArea />
-      <Testimonial />
+    </div>
+  )
+}
+
+const aboutInfo = [
+  {
+    id: crypto.randomUUID(),
+    title: 'Who We Are',
+    description: '',
+    features: [
+      'We are a collective of highly skilled IT specialists, engineers, and consultants with deep expertise across cloud computing, cybersecurity, infrastructure, software development, AI, and enterprise solutions.',
+      'Every project we undertake is approached with a commitment to excellence, attention to detail, and a clear understanding of your business objectives.',
+      'We don’t offer one-size-fits-all services.',
+      'We architect solutions that are tailored, secure, and built to scale.',
+    ],
+    info: '',
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'What We Deliver',
+    description: '',
+    features: [
+      'Our capabilities span across the full spectrum of modern IT',
+      'Advanced Cloud & Infrastructure Solutions',
+      'Enterprise-Grade Cybersecurity',
+      'Custom Software & Application Development',
+      'ERP & Business Process Automation',
+      'Intelligent AI & Data-Driven Systems',
+      'Digital Transformation & IT Strategy',
+      'Managed IT Services & Ongoing Support',
+      'Each solution is engineered to enhance performance, strengthen security, and unlock new opportunities for growth.',
+    ],
+    info: 'Each solution is engineered to enhance performance, strengthen security, and unlock new opportunities for growth.',
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Our Commitment to Excellence',
+    description:
+      'From initial consultation to final deployment and beyond, we maintain a relentless focus on delivering',
+    features: [
+      'Precision in execution',
+      'Transparency in communication',
+      'Reliability in performance',
+      'Long-term value for our clients',
+    ],
+    info: '',
+  },
+]
+
+const ServicesMain = () => {
+  return (
+    <>
+      <div className="services__four pb-120">
+        <div className="container">
+          <div className="pb-50">
+            <SectionHeadings
+              title="Your success defines our success."
+              subtitle="Why Choose Us"
+              description="As technology continues to evolve, so do we.
+              ESHA IT Consultancy Services remains committed to staying ahead of the curve — continuously adopting emerging in4novations to ensure our clients remain competitive in an ever-changing digital landscape."
+            />
+          </div>
+
+          <div className="row gy-4">
+            {aboutInfo.map((data, id) => {
+              // const words = data.title.split(' ')
+              // const firstAndSecondWord = words.slice(0, 2).join(' ')
+              return (
+                <div className="col-xl-4 col-lg-4 col-md-6" key={id}>
+                  <div className="services__four-single-service">
+                    {/* <div className="services__four-single-service-icon">
+                      {data.icon}
+                    </div> */}
+                    <div className="services__four-single-service-content">
+                      <h4>{data.title}</h4>
+                      <p>{data.description}</p>
+                      {/* <a href={`/services/${data.id}`} className="btn-three">
+                        Read More<i className="fas fa-chevron-right"></i>
+                      </a> */}
+                      <ul>
+                        {data.features.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
     </>
+  )
+}
+
+const TeamMain = () => {
+  return (
+    <div className="team__two section-paddingg">
+      <div className="container">
+        <div className="pb-50">
+          <SectionHeadings
+            title="Our Teams"
+            subtitle="Why Choose Us"
+            description="With ESHA, technology becomes more than a tool — it becomes a strategic advantage."
+          />
+        </div>
+
+        <div className="row gy-4 justify-content-center">
+          {teamData.map((data, id) => (
+            <div className="col-xl-4 col-lg-4 col-md-6" key={id}>
+              <div className="team__two-team-item">
+                <img src={data.image} alt="image" />
+                <div className="team__two-team-item-content">
+                  <div className="member-name">
+                    <h3>{data.name}</h3>
+                    <span>{data.position}</span>
+                  </div>
+                  <div className="fas fa-share-alt share-link-wrapper">
+                    <div className="share-links">
+                      {data.social_link.map((social, id) => (
+                        <Link
+                          className="inner-link"
+                          key={id}
+                          to={social.link}
+                          target={social.target}
+                        >
+                          {social.icon}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
