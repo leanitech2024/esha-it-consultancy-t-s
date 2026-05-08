@@ -38,6 +38,9 @@ importers:
       lucide-react:
         specifier: ^0.545.0
         version: 0.545.0(react@19.2.5)
+      nitro:
+        specifier: 3.0.260429-beta
+        version: 3.0.260429-beta(@electric-sql/pglite@0.3.16)(@netlify/blobs@10.7.4)(@netlify/runtime@4.1.20)(chokidar@5.0.0)(dotenv@16.6.1)(jiti@2.6.1)(lru-cache@11.3.5)(rollup@4.60.2)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
       react:
         specifier: ^19.2.0
         version: 19.2.5
@@ -77,7 +80,7 @@ importers:
         version: 0.3.0(@content-collections/core@0.15.0(typescript@5.9.3))(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
       '@netlify/vite-plugin-tanstack-start':
         specifier: ^1.3.9
-        version: 1.3.9(@tanstack/react-start@1.167.49(crossws@0.4.5(srvx@0.11.15))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
+        version: 1.3.9(@tanstack/react-start@1.167.49(crossws@0.4.5(srvx@0.11.15))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)))(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
       '@tanstack/devtools-vite':
         specifier: latest
         version: 0.6.0(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
@@ -2755,6 +2758,29 @@ packages:
   dayjs@1.11.20:
     resolution: {integrity: sha512-YbwwqR/uYpeoP4pu043q+LTDLFBLApUP6VxRihdfNTqu4ubqMlGDLd6ErXhEgsyvY0K6nCs7nggYumAN+9uEuQ==}
 
+  db0@0.3.4:
+    resolution: {integrity: sha512-RiXXi4WaNzPTHEOu8UPQKMooIbqOEyqA1t7Z6MsdxSCeb8iUC9ko3LcmsLmeUt2SM5bctfArZKkRQggKZz7JNw==}
+    peerDependencies:
+      '@electric-sql/pglite': '*'
+      '@libsql/client': '*'
+      better-sqlite3: '*'
+      drizzle-orm: '*'
+      mysql2: '*'
+      sqlite3: '*'
+    peerDependenciesMeta:
+      '@electric-sql/pglite':
+        optional: true
+      '@libsql/client':
+        optional: true
+      better-sqlite3:
+        optional: true
+      drizzle-orm:
+        optional: true
+      mysql2:
+        optional: true
+      sqlite3:
+        optional: true
+
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     engines: {node: '>=6.0'}
@@ -2946,6 +2972,18 @@ packages:
   env-paths@3.0.0:
     resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  env-runner@0.1.7:
+    resolution: {integrity: sha512-i7h96jxETJYhXy5grgHNJ9xNzCzWIn9Ck/VkkYgOlE4gOqknsLX3CmlVb5LmwNex8sOoLFVZLz+TIw/+b5rktA==}
+    hasBin: true
+    peerDependencies:
+      '@netlify/runtime': ^4
+      miniflare: ^4.20260317.3
+    peerDependenciesMeta:
+      '@netlify/runtime':
+        optional: true
+      miniflare:
+        optional: true
 
   es-abstract@1.24.2:
     resolution: {integrity: sha512-2FpH9Q5i2RRwyEP1AylXe6nYLR5OhaJTZwmlcP0dL/+JCbgg7yyEo/sEK6HeGZRf3dFpWwThaRHVApXSkW3xeg==}
@@ -3466,6 +3504,9 @@ packages:
   hastscript@9.0.1:
     resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
 
+  hookable@6.1.1:
+    resolution: {integrity: sha512-U9LYDy1CwhMCnprUfeAZWZGByVbhd54hwepegYTK7Pi5NvqEj63ifz5z+xukznehT7i6NIZRu89Ay1AZmRsLEQ==}
+
   hosted-git-info@7.0.2:
     resolution: {integrity: sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==}
     engines: {node: ^16.14.0 || >=18.0.0}
@@ -3491,6 +3532,9 @@ packages:
   https-proxy-agent@7.0.6:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
+
+  httpxy@0.5.1:
+    resolution: {integrity: sha512-JPhqYiixe1A1I+MXDewWDZqeudBGU8Q9jCHYN8ML+779RQzLjTi78HBvWz4jMxUD6h2/vUL12g4q/mFM0OUw1A==}
 
   human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
@@ -4248,6 +4292,40 @@ packages:
   netlify-redirector@0.5.0:
     resolution: {integrity: sha512-4zdzIP+6muqPCuE8avnrgDJ6KW/2+UpHTRcTbMXCIRxiRmyrX+IZ4WSJGZdHPWF3WmQpXpy603XxecZ9iygN7w==}
 
+  nf3@0.3.17:
+    resolution: {integrity: sha512-N9zEWySuJFw+gR0lhS5863YsvNeudOdqRyFvNb+jMXbeTJOdrjDqkCpDginIZfUm0LzT1t1nCRiDeqQm/8kirQ==}
+
+  nitro@3.0.260429-beta:
+    resolution: {integrity: sha512-KweLVCUN5X9v9g+4yxAyRcz3FcOlnjmt9FyrAIWDxJETJmNT7I0JV0clgsONjo2nI0U5gwedXYA3RaNtF5XWzg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
+    peerDependencies:
+      '@vercel/queue': ^0.1.6
+      dotenv: '*'
+      giget: '*'
+      jiti: ^2.6.1
+      rollup: ^4.60.2
+      vite: ^7 || ^8
+      xml2js: ^0.6.2
+      zephyr-agent: ^0.2.0
+    peerDependenciesMeta:
+      '@vercel/queue':
+        optional: true
+      dotenv:
+        optional: true
+      giget:
+        optional: true
+      jiti:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      xml2js:
+        optional: true
+      zephyr-agent:
+        optional: true
+
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
 
@@ -4338,8 +4416,17 @@ packages:
     resolution: {integrity: sha512-8u/hfXFRBD1O0hPUjioLhoWFHRmt6tKA4/vZPyckBr18l1KE9uHrFaFaUi8MDRTpi4uak2goyPTSNJLXX2k2Hw==}
     engines: {node: '>= 0.4'}
 
+  ocache@0.1.4:
+    resolution: {integrity: sha512-e7geNdWjxSnvsSgvLuPvgKgu7ubM10ZmTPOgpr7mz2BXYtvjMKTiLhjFi/gWU8chkuP6hNkZBsa9LzOusyaqkQ==}
+
   ofetch@1.5.1:
     resolution: {integrity: sha512-2W4oUZlVaqAPAil6FUg/difl6YhqhUR7x2eZY4bQCko22UXg3hptq9KLQdqFClV+Wu85UX7hNtdGTngi/1BxcA==}
+
+  ofetch@2.0.0-alpha.3:
+    resolution: {integrity: sha512-zpYTCs2byOuft65vI3z43Dd6iSdFbOZZLb9/d21aCpx2rGastVU9dOCv0lu4ykc1Ur1anAYjDi3SUvR0vq50JA==}
+
+  ohash@2.0.11:
+    resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
   omit.js@2.0.2:
     resolution: {integrity: sha512-hJmu9D+bNB40YpL9jYebQl4lsTW6yEHRTroJzNLqQJYHm7c+NQnJGfZmIWh8S3q3KoaxV1aLhV6B3+0N0/kyJg==}
@@ -5139,6 +5226,9 @@ packages:
     resolution: {integrity: sha512-xXnp4kTyor2Zq+J1FfPI6Eq3ew5h6Vl0F/8d9XU5zZQf1tX9s2Su1/3PiMmUANFULpmksxkClamIZcaUqryHsQ==}
     engines: {node: '>=20.18.1'}
 
+  unenv@2.0.0-rc.24:
+    resolution: {integrity: sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw==}
+
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
     engines: {node: '>=18'}
@@ -5233,6 +5323,80 @@ packages:
       idb-keyval:
         optional: true
       ioredis:
+        optional: true
+      uploadthing:
+        optional: true
+
+  unstorage@2.0.0-alpha.7:
+    resolution: {integrity: sha512-ELPztchk2zgFJnakyodVY3vJWGW9jy//keJ32IOJVGUMyaPydwcA1FtVvWqT0TNRch9H+cMNEGllfVFfScImog==}
+    peerDependencies:
+      '@azure/app-configuration': ^1.11.0
+      '@azure/cosmos': ^4.9.1
+      '@azure/data-tables': ^13.3.2
+      '@azure/identity': ^4.13.0
+      '@azure/keyvault-secrets': ^4.10.0
+      '@azure/storage-blob': ^12.31.0
+      '@capacitor/preferences': ^6 || ^7 || ^8
+      '@deno/kv': '>=0.13.0'
+      '@netlify/blobs': ^6.5.0 || ^7.0.0 || ^8.1.0 || ^9.0.0 || ^10.0.0
+      '@planetscale/database': ^1.19.0
+      '@upstash/redis': ^1.36.2
+      '@vercel/blob': '>=0.27.3'
+      '@vercel/functions': ^2.2.12 || ^3.0.0
+      '@vercel/kv': ^1.0.1
+      aws4fetch: ^1.0.20
+      chokidar: ^4 || ^5
+      db0: '>=0.3.4'
+      idb-keyval: ^6.2.2
+      ioredis: ^5.9.3
+      lru-cache: ^11.2.6
+      mongodb: ^6 || ^7
+      ofetch: '*'
+      uploadthing: ^7.7.4
+    peerDependenciesMeta:
+      '@azure/app-configuration':
+        optional: true
+      '@azure/cosmos':
+        optional: true
+      '@azure/data-tables':
+        optional: true
+      '@azure/identity':
+        optional: true
+      '@azure/keyvault-secrets':
+        optional: true
+      '@azure/storage-blob':
+        optional: true
+      '@capacitor/preferences':
+        optional: true
+      '@deno/kv':
+        optional: true
+      '@netlify/blobs':
+        optional: true
+      '@planetscale/database':
+        optional: true
+      '@upstash/redis':
+        optional: true
+      '@vercel/blob':
+        optional: true
+      '@vercel/functions':
+        optional: true
+      '@vercel/kv':
+        optional: true
+      aws4fetch:
+        optional: true
+      chokidar:
+        optional: true
+      db0:
+        optional: true
+      idb-keyval:
+        optional: true
+      ioredis:
+        optional: true
+      lru-cache:
+        optional: true
+      mongodb:
+        optional: true
+      ofetch:
         optional: true
       uploadthing:
         optional: true
@@ -6441,7 +6605,7 @@ snapshots:
       uuid: 13.0.0
       write-file-atomic: 5.0.1
 
-  '@netlify/dev@4.18.1(rollup@4.60.2)(srvx@0.11.15)':
+  '@netlify/dev@4.18.1(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)':
     dependencies:
       '@netlify/ai': 0.4.1
       '@netlify/blobs': 10.7.4
@@ -6451,7 +6615,7 @@ snapshots:
       '@netlify/edge-functions-dev': 1.0.16
       '@netlify/functions-dev': 1.2.6(rollup@4.60.2)
       '@netlify/headers': 2.1.8
-      '@netlify/images': 1.3.7(@netlify/blobs@10.7.4)(srvx@0.11.15)
+      '@netlify/images': 1.3.7(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16))(srvx@0.11.15)
       '@netlify/redirects': 3.1.10
       '@netlify/runtime': 4.1.20
       '@netlify/static': 3.1.7
@@ -6563,9 +6727,9 @@ snapshots:
     dependencies:
       '@netlify/headers-parser': 9.0.3
 
-  '@netlify/images@1.3.7(@netlify/blobs@10.7.4)(srvx@0.11.15)':
+  '@netlify/images@1.3.7(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16))(srvx@0.11.15)':
     dependencies:
-      ipx: 3.1.1(@netlify/blobs@10.7.4)(srvx@0.11.15)
+      ipx: 3.1.1(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16))(srvx@0.11.15)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -6636,9 +6800,9 @@ snapshots:
 
   '@netlify/types@2.6.0': {}
 
-  '@netlify/vite-plugin-tanstack-start@1.3.9(@tanstack/react-start@1.167.49(crossws@0.4.5(srvx@0.11.15))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))':
+  '@netlify/vite-plugin-tanstack-start@1.3.9(@tanstack/react-start@1.167.49(crossws@0.4.5(srvx@0.11.15))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)))(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
-      '@netlify/vite-plugin': 2.12.1(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
+      '@netlify/vite-plugin': 2.12.1(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
       vite: 8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)
     optionalDependencies:
       '@tanstack/react-start': 1.167.49(crossws@0.4.5(srvx@0.11.15))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))
@@ -6670,9 +6834,9 @@ snapshots:
       - supports-color
       - uploadthing
 
-  '@netlify/vite-plugin@2.12.1(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))':
+  '@netlify/vite-plugin@2.12.1(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
-      '@netlify/dev': 4.18.1(rollup@4.60.2)(srvx@0.11.15)
+      '@netlify/dev': 4.18.1(db0@0.3.4(@electric-sql/pglite@0.3.16))(rollup@4.60.2)(srvx@0.11.15)
       '@netlify/dev-utils': 4.4.3
       dedent: 1.7.2
       vite: 8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)
@@ -8317,6 +8481,10 @@ snapshots:
 
   dayjs@1.11.20: {}
 
+  db0@0.3.4(@electric-sql/pglite@0.3.16):
+    optionalDependencies:
+      '@electric-sql/pglite': 0.3.16
+
   debug@4.4.3:
     dependencies:
       ms: 2.1.3
@@ -8494,6 +8662,15 @@ snapshots:
   entities@8.0.0: {}
 
   env-paths@3.0.0: {}
+
+  env-runner@0.1.7(@netlify/runtime@4.1.20):
+    dependencies:
+      crossws: 0.4.5(srvx@0.11.15)
+      exsolve: 1.0.8
+      httpxy: 0.5.1
+      srvx: 0.11.15
+    optionalDependencies:
+      '@netlify/runtime': 4.1.20
 
   es-abstract@1.24.2:
     dependencies:
@@ -9272,6 +9449,8 @@ snapshots:
       property-information: 7.1.0
       space-separated-tokens: 2.0.2
 
+  hookable@6.1.1: {}
+
   hosted-git-info@7.0.2:
     dependencies:
       lru-cache: 10.4.3
@@ -9306,6 +9485,8 @@ snapshots:
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
+
+  httpxy@0.5.1: {}
 
   human-signals@5.0.0: {}
 
@@ -9346,7 +9527,7 @@ snapshots:
       hasown: 2.0.3
       side-channel: 1.1.0
 
-  ipx@3.1.1(@netlify/blobs@10.7.4)(srvx@0.11.15):
+  ipx@3.1.1(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16))(srvx@0.11.15):
     dependencies:
       '@fastify/accept-negotiator': 2.0.1
       citty: 0.1.6
@@ -9362,7 +9543,7 @@ snapshots:
       sharp: 0.34.5
       svgo: 4.0.1
       ufo: 1.6.3
-      unstorage: 1.17.5(@netlify/blobs@10.7.4)
+      unstorage: 1.17.5(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16))
       xss: 1.0.15
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -10337,6 +10518,60 @@ snapshots:
 
   netlify-redirector@0.5.0: {}
 
+  nf3@0.3.17: {}
+
+  nitro@3.0.260429-beta(@electric-sql/pglite@0.3.16)(@netlify/blobs@10.7.4)(@netlify/runtime@4.1.20)(chokidar@5.0.0)(dotenv@16.6.1)(jiti@2.6.1)(lru-cache@11.3.5)(rollup@4.60.2)(vite@8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)):
+    dependencies:
+      consola: 3.4.2
+      crossws: 0.4.5(srvx@0.11.15)
+      db0: 0.3.4(@electric-sql/pglite@0.3.16)
+      env-runner: 0.1.7(@netlify/runtime@4.1.20)
+      h3: 2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15))
+      hookable: 6.1.1
+      nf3: 0.3.17
+      ocache: 0.1.4
+      ofetch: 2.0.0-alpha.3
+      ohash: 2.0.11
+      rolldown: 1.0.0-rc.17
+      srvx: 0.11.15
+      unenv: 2.0.0-rc.24
+      unstorage: 2.0.0-alpha.7(@netlify/blobs@10.7.4)(chokidar@5.0.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(lru-cache@11.3.5)(ofetch@2.0.0-alpha.3)
+    optionalDependencies:
+      dotenv: 16.6.1
+      jiti: 2.6.1
+      rollup: 4.60.2
+      vite: 8.0.10(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1)(yaml@2.8.3)
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@electric-sql/pglite'
+      - '@libsql/client'
+      - '@netlify/blobs'
+      - '@netlify/runtime'
+      - '@planetscale/database'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/functions'
+      - '@vercel/kv'
+      - aws4fetch
+      - better-sqlite3
+      - chokidar
+      - drizzle-orm
+      - idb-keyval
+      - ioredis
+      - lru-cache
+      - miniflare
+      - mongodb
+      - mysql2
+      - sqlite3
+      - uploadthing
+
   node-addon-api@7.1.1: {}
 
   node-domexception@1.0.0: {}
@@ -10418,11 +10653,19 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
+  ocache@0.1.4:
+    dependencies:
+      ohash: 2.0.11
+
   ofetch@1.5.1:
     dependencies:
       destr: 2.0.5
       node-fetch-native: 1.6.7
       ufo: 1.6.3
+
+  ofetch@2.0.0-alpha.3: {}
+
+  ohash@2.0.11: {}
 
   omit.js@2.0.2: {}
 
@@ -11409,6 +11652,10 @@ snapshots:
 
   undici@7.25.0: {}
 
+  unenv@2.0.0-rc.24:
+    dependencies:
+      pathe: 2.0.3
+
   unicorn-magic@0.1.0: {}
 
   unified@11.0.5:
@@ -11482,7 +11729,7 @@ snapshots:
       '@unrs/resolver-binding-win32-ia32-msvc': 1.11.1
       '@unrs/resolver-binding-win32-x64-msvc': 1.11.1
 
-  unstorage@1.17.5(@netlify/blobs@10.7.4):
+  unstorage@1.17.5(@netlify/blobs@10.7.4)(db0@0.3.4(@electric-sql/pglite@0.3.16)):
     dependencies:
       anymatch: 3.1.3
       chokidar: 5.0.0
@@ -11494,6 +11741,15 @@ snapshots:
       ufo: 1.6.3
     optionalDependencies:
       '@netlify/blobs': 10.7.4
+      db0: 0.3.4(@electric-sql/pglite@0.3.16)
+
+  unstorage@2.0.0-alpha.7(@netlify/blobs@10.7.4)(chokidar@5.0.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(lru-cache@11.3.5)(ofetch@2.0.0-alpha.3):
+    optionalDependencies:
+      '@netlify/blobs': 10.7.4
+      chokidar: 5.0.0
+      db0: 0.3.4(@electric-sql/pglite@0.3.16)
+      lru-cache: 11.3.5
+      ofetch: 2.0.0-alpha.3
 
   untun@0.1.3:
     dependencies:
