@@ -217,11 +217,11 @@ const ThreeColumns = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="portfolio__two-single-item-content-right">
+                  {/* <div className="portfolio__two-single-item-content-right">
                     <a href={`#`} title="View Details">
                       <i className="fas fa-arrow-right"></i>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

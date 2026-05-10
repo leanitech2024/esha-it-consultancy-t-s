@@ -29,9 +29,8 @@ const SideBar = ({
           </Link>
         </div>
         <p>
-          The insurance company assumes the financial risk of covering these
-          events in exchange for the premiums paid by the policyholder. There
-          are many different types of insurance,
+          Esha IT Consultancy is a leading IT consultancy firm dedicated to
+          empowering businesses with innovative technology solutions.
         </p>
         <div className="header__area-menubar-right-sidebar-popup-contact">
           <h4 className="mb-30">Get In Touch</h4>
@@ -42,7 +41,7 @@ const SideBar = ({
             <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
               <span>Call Now</span>
               <h6>
-                <a href="tel:+125(895)658568">+125 (895) 658 568</a>
+                <a href="tel:+971526063287">(+971) 526063287</a>
               </h6>
             </div>
           </div>
@@ -53,7 +52,9 @@ const SideBar = ({
             <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
               <span>Quick Email</span>
               <h6>
-                <a href="mailto:info.help@gmail.com">info.help@gmail.com</a>
+                <a href="mailto:eshaitconsultancyservices@gmail.com">
+                  eshaitconsultancyservices@gmail.com
+                </a>
               </h6>
             </div>
           </div>
@@ -64,8 +65,11 @@ const SideBar = ({
             <div className="header__area-menubar-right-sidebar-popup-contact-item-content">
               <span>Office Address</span>
               <h6>
-                <a href="https://google.com/maps" target="_blank">
-                  PV3M+X68 Welshpool United Kingdom
+                <a
+                  href="https://maps.app.goo.gl/ZqrUPxNSqhLxCCfc9"
+                  target="_blank"
+                >
+                  26th Floor, Amber Gem Tower, Ajman
                 </a>
               </h6>
             </div>

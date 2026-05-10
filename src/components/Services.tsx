@@ -196,10 +196,11 @@ export default function Services() {
                 </div>
                 <div className="services__two-single-service-content">
                   <h4>{data.title}</h4>
-                  <p>{data.description}</p>
-                  <ul className="list-group list-group-flush">
+                  <p className={'mb-2'}>{data.description}</p>
+                  {/* <ul className="list-group list-group-flush"> */}
+                  <ul>
                     {data.features.map((feature, index) => (
-                      <li className="list-group-item" key={index}>
+                      <li className="list-group-itemm" key={index}>
                         {feature}
                       </li>
                     ))}

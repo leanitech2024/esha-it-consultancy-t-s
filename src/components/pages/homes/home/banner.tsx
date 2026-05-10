@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import banner1 from '/assets/img/banner/banner-right-img.jpg'
-import bannerShape from '/assets/img/shape/banner-shape.png'
+import bannerShape from '/assets/img/shape/banner-shape-1.png'
 
 const BannerOne = () => {
   return (

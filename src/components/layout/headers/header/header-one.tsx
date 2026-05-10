@@ -28,8 +28,8 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
           <div className="row">
             <div className="col-xl-7 col-md-7">
               <div className="top__bar-left">
-                <a href="tel:0526063287" target="_blank">
-                  <i className="fas fa-phone-alt"></i>0526063287
+                <a href="tel:+971526063287" target="_blank">
+                  <i className="fas fa-phone-alt"></i>(+971) 526063287
                 </a>
                 <a
                   href="mailto:eshaitconsultancyservices@gmail.com"

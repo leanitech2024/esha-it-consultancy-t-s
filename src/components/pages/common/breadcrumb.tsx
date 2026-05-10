@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import image from '/assets/img/banner/page-banner-img.png'
-import shape from '/assets/img/shape/page-banner-shape.png'
+import shape from '/assets/img/shape/page-banner-shape-1.png'
 
 const BreadCrumb = ({
   title,

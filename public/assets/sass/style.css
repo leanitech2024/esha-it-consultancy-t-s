@@ -1089,7 +1089,8 @@ p {
   /* --primary-color-1: #0E59F2; */
   --primary-color-2: #f8e559;
   --primary-color-3: #406aff;
-  --bg-heading-color: #051634;
+  /* --bg-heading-color: #051634; */
+  --bg-heading-color: #102323;
   --text-heading-color: #8b6914;
   /* --text-heading-color: #051634; */
   --btn-heading-color: #131313;
@@ -1100,7 +1101,8 @@ p {
   --color-2: #737373;
   --color-3: #0b46bf;
   --color-4: #cccccc;
-  --color-5: #12223e;
+  /* --color-5: #12223e; */
+  --color-5: #314e4e;
   --color-6: #864af942;
   --color-7: #07204d;
   --border-color-1: #e7e7e7;
@@ -4052,7 +4054,8 @@ Responsive Menu Css
 .banner__one .banner-shape-7 {
   width: 60px;
   height: 280px;
-  background-color: #4b83f4;
+  /* background-color: #4b83f4; */
+  background-color: #486161;
   top: 8%;
   right: -1%;
   transform: skew(19deg);
@@ -4588,7 +4591,8 @@ Responsive Menu Css
 * Page Banner CSS
 ==========================================================================*/
 .page__banner {
-  background-color: var(--bg-heading-color);
+  /* background-color: var(--bg-heading-color); */
+  background-color: var(--bs-gray-500);
   position: relative;
   overflow: hidden;
 }
@@ -5577,6 +5581,7 @@ Responsive Menu Css
 }
 .services__two-single-service:hover {
   transform: translateY(-5px);
+  color: var(--text-white);
 }
 .services__two-single-service:hover::before {
   opacity: 1;

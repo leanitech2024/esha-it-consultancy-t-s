@@ -47,7 +47,11 @@ const FooterOne = () => {
                       height={80}
                     />
                   </Link>
-                  <p>Financial planners help people to gain knowledge about</p>
+                  <p>
+                    Esha IT Consultancy is a leading IT consultancy firm
+                    dedicated to empowering businesses with innovative
+                    technology solutions.
+                  </p>
                   <div className="footer__two-widget-about-location">
                     <div className="footer__two-widget-about-location-item">
                       <div className="footer__two-widget-about-location-item-icon">
@@ -55,7 +59,7 @@ const FooterOne = () => {
                       </div>
                       <div className="footer__two-widget-about-location-item-info">
                         <span>Phone Number</span>
-                        <a href="tel:(307)555-0133">(307) 555-0133</a>
+                        <a href="tel:+971526063287">(+971)526063287</a>
                       </div>
                     </div>
                   </div>
@@ -63,19 +67,20 @@ const FooterOne = () => {
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-              <div className="footer__two-widget ml-85">
+              <div className="footer__two-widget ml-855">
                 <h4>Quick Link</h4>
                 <div className="footer__two-widget-solution">
                   <ul>
                     <li>
-                      <a href="services">
+                      <Link to="/services">
                         <i className="far fa-chevron-double-right"></i>Service
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="faq">
-                        <i className="far fa-chevron-double-right"></i>FAQ
-                      </a>
+                      <Link to="/portfolios">
+                        <i className="far fa-chevron-double-right"></i>
+                        Portfolios
+                      </Link>
                     </li>
                     <li>
                       <a href="testimonial">
@@ -84,9 +89,9 @@ const FooterOne = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="about">
+                      <Link to="/about">
                         <i className="far fa-chevron-double-right"></i>About Us
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -131,13 +136,16 @@ const FooterOne = () => {
             <div className="row justify-content-between copyright__one-container-area">
               <div className="col-xl-5 col-lg-6">
                 <div className="copyright__one-left">
-                  <p>© ThemeOri 2024 | All Rights Reserved</p>
+                  <p>
+                    © Esha IT Consultancy {new Date().getFullYear()} | All
+                    Rights Reserved
+                  </p>
                 </div>
               </div>
               <div className="col-xl-5 col-lg-6">
                 <div className="copyright__one-right">
-                  <Link to="/about">Privacy Policy</Link>
-                  <a href="/contact">Contact Us</a>
+                  <Link to=".">Privacy Policy</Link>
+                  <Link to=".">Contact Us</Link>
                 </div>
               </div>
             </div>
