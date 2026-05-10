@@ -6,12 +6,12 @@ export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
       {
-        title: 'Esha IT Consultancy',
+        title: 'Home | Esha IT Consultancy',
       },
       {
         name: 'description',
         content:
-          'Esha IT Consultancy is a leading provider of IT solutions and services, dedicated to helping businesses leverage technology for growth and success. With a team of experienced professionals, we offer a wide range of services including software development, cloud computing, cybersecurity, and IT consulting. Our mission is to deliver innovative and customized solutions that meet the unique needs of our clients, enabling them to stay competitive in the ever-evolving digital landscape.',
+          'Experience elite IT consultancy and bespoke digital solutions tailored for ambitious businesses. We craft innovative, scalable, and high-performance technology to elevate your brand.',
       },
     ],
   }),

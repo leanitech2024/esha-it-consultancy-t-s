@@ -29,7 +29,7 @@ const BannerOne = () => {
                   challenges into competitive advantages.
                 </p>
                 <div className="d-flex align-items-center gap-2">
-                  <Link to="/contact" className="btn-two">
+                  <Link to="/services" className="btn-two">
                     Explore services
                     <i className="fas fa-arrow-right"></i>
                   </Link>

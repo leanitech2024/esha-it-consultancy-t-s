@@ -98,7 +98,7 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
                     Get Quote<i className="fas fa-arrow-right"></i>
                   </Link>
                 </div>
-                <div className="header__area-menubar-right-responsive-menu menu__bar">
+                <div className="header__area-menubar-right-responsive-menu menu__bar mr-10">
                   <i
                     className="flaticon-menu-1"
                     onClick={() => setMenuSidebar(true)}

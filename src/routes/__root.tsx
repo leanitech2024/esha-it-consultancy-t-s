@@ -37,6 +37,16 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       {
         title: 'Esha IT Consultancy',
       },
+      {
+        name: 'description',
+        content:
+          'Experience elite IT consultancy and bespoke digital solutions tailored for ambitious businesses. We craft innovative, scalable, and high-performance technology to elevate your brand.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'IT consultancy in Dubai, digital solutions UAE, software company Dubai, web development UAE, IT services Middle East',
+      },
     ],
     links: [
       {

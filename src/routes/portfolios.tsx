@@ -111,6 +111,13 @@ const servedIndustries = [
 ]
 
 export const Route = createFileRoute('/portfolios')({
+  head: () => ({
+    meta: [
+      {
+        title: 'Portfolios | Esha IT Consultancy',
+      },
+    ],
+  }),
   component: RouteComponent,
 })
 

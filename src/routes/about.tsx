@@ -22,11 +22,6 @@ export const Route = createFileRoute('/about')({
       {
         title: 'About Us | Esha IT Consultancy',
       },
-      {
-        name: 'description',
-        content:
-          'Esha IT Consultancy is a leading provider of IT solutions and services, dedicated to helping businesses leverage technology for growth and success. With a team of experienced professionals, we offer a wide range of services including software development, cloud computing, cybersecurity, and IT consulting. Our mission is to deliver innovative and customized solutions that meet the unique needs of our clients, enabling them to stay competitive in the ever-evolving digital landscape.',
-      },
     ],
   }),
   component: About,
@@ -284,7 +279,14 @@ const TeamMain = () => {
           {teamData.map((data, id) => (
             <div className="col-xl-4 col-lg-4 col-md-6" key={id}>
               <div className="team__two-team-item">
-                <img src={data.image} alt="image" />
+                <img
+                  src={data.image}
+                  alt="image"
+                  width={300}
+                  height={300}
+                  className={'object-fit-fill'}
+                  style={{ aspectRatio: 1 }}
+                />
                 <div className="team__two-team-item-content">
                   <div className="member-name">
                     <h3>{data.name}</h3>

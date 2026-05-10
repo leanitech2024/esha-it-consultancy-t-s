@@ -1,20 +1,20 @@
 import { Link } from '@tanstack/react-router'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 const ResponsiveMenu = () => {
-  const [activeMenu, setActiveMenu] = useState(null)
-  const active = (value: any) =>
-      setActiveMenu(value === activeMenu ? null : value),
-    activeIcon = (value: any) => (activeMenu == value ? 'mean-clicked' : ''),
-    activeSubMenu = (value: any) =>
-      value == activeMenu ? { display: 'block' } : { display: 'none' }
+  // const [activeMenu, setActiveMenu] = useState(null)
+  // const active = (value: any) =>
+  //     setActiveMenu(value === activeMenu ? null : value),
+  //   activeIcon = (value: any) => (activeMenu == value ? 'mean-clicked' : ''),
+  //   activeSubMenu = (value: any) =>
+  //     value == activeMenu ? { display: 'block' } : { display: 'none' }
 
-  const [activeMenus, setActiveMenus] = useState(null)
-  const actives = (value: any) =>
-      setActiveMenus(value === activeMenus ? null : value),
-    activeIcons = (value: any) => (activeMenus == value ? 'mean-clicked' : ''),
-    activeSubMenus = (value: any) =>
-      value == activeMenus ? { display: 'block' } : { display: 'none' }
+  // const [activeMenus, setActiveMenus] = useState(null)
+  // const actives = (value: any) =>
+  //     setActiveMenus(value === activeMenus ? null : value),
+  //   activeIcons = (value: any) => (activeMenus == value ? 'mean-clicked' : ''),
+  //   activeSubMenus = (value: any) =>
+  //     value == activeMenus ? { display: 'block' } : { display: 'none' }
 
   return (
     <>
@@ -25,7 +25,16 @@ const ResponsiveMenu = () => {
         <li>
           <Link to="/about">About</Link>
         </li>
-        <li className="menu-item-has-children">
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/portfolios">Portfolios</Link>
+        </li>
+        <li>
+          <Link to="/blogs">Blogs</Link>
+        </li>
+        {/* <li className="menu-item-has-children">
           <a
             className={`mean-expand ${activeIcon('home')}`}
             onClick={() => active('home')}
@@ -125,7 +134,7 @@ const ResponsiveMenu = () => {
             className={`mean-expand ${activeIcon('blog')}`}
             onClick={() => active('blog')}
           ></a>
-        </li>
+        </li> */}
         <li>
           <Link to="/contact">Contact</Link>
         </li>
