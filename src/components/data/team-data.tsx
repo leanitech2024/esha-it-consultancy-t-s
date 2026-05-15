@@ -2,7 +2,7 @@ const teamData = [
   {
     id: crypto.randomUUID(),
     image: '/assets/img/team/team-1.png',
-    name: 'B Srikanth Raju',
+    name: 'Srikanth',
     position: 'CEO',
     mail: 'derya@gmail.com',
     phone: '+125 (564) 656 156',
