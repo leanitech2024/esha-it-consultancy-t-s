@@ -284,8 +284,8 @@ const TeamMain = () => {
                   alt="image"
                   width={300}
                   height={300}
-                  className={'object-fit-fill'}
-                  style={{ aspectRatio: 1 }}
+                  className={'object-fit-contain'}
+                  style={{ aspectRatio: 1, overflow: 'hidden' }}
                 />
                 <div className="team__two-team-item-content">
                   <div className="member-name">

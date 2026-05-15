@@ -16,6 +16,7 @@ import FooterOne from '#/components/layout/footers/footer-one'
 import HeaderOne from '#/components/layout/headers/header/header-one'
 import NotFound from '#/components/not-found'
 import ScrollToTop from '#/components/pages/common/scroll/scroll-to-top'
+import WhatsappWidget from '#/components/WhatsappWidget.tsx'
 import type { QueryClient } from '@tanstack/react-query'
 
 interface MyRouterContext {
@@ -82,6 +83,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <FooterOne />
         <ScrollToTop />
         <CustomCursor />
+        <WhatsappWidget />
         <TanStackDevtools
           config={{
             position: 'bottom-right',

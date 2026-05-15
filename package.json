@@ -15,6 +15,7 @@
     "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
+    "@carlos8a/react-whatsapp-floating-button": "^1.1.5",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-query": "latest",
     "@tanstack/react-query-devtools": "latest",
@@ -29,6 +30,8 @@
     "react": "^19.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.0",
+    "react-whatsapp": "^0.3.0",
+    "react-whatsapp-chat-package": "1.0.19",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
     "swiper": "^12.1.3",
